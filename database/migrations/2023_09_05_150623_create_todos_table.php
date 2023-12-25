@@ -11,12 +11,13 @@ return new class extends Migration
      *
      * @return void
      */
+    
     public function up()
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
             $table->text('content');
-            $table->text('description');
+            $table->text('description');// textに修正
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('goal_id')->constrained()->cascadeOnDelete();
             $table->boolean('done')->default(false);
