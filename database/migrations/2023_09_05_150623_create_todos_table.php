@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
             $table->text('content');
-            $table->varchar('description');
+            $table->text('description');
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('goal_id')->constrained()->cascadeOnDelete();
             $table->boolean('done')->default(false);
